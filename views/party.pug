@@ -5,3 +5,18 @@ h3 Créé par #{party.author}
 
 label(for="url") Partagez l'événement
 input(id="url" value=`${url}`)
+
+ul
+  each item in party.items
+    li
+      form(method="post" action=`/party/${party._id}/items/${item._id}`)
+        p= `${item.name} - ${item.user}`
+        button(type="submit") Supprimer
+
+form(method="post" action=`/party/${party._id}/items`)
+  div
+    label(for="name") Nom de l'item
+    input(name="name" id="name" required minlength="3" placeholder="item")
+    label(for="user") Qui apporte l'item
+    input(name="user" id="user" required minlength="3" placeholder="nom de la personne")
+  button(type="submit") Ajouter
