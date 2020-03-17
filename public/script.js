@@ -1,7 +1,7 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const numbers = [1, 2, 3];
-const doubles = numbers.map(number => number * 2);
-console.log(doubles);
+"use strict";var numbers=[1,2,3],doubles=numbers.map(function(a){return 2*a});console.log(doubles);
+
 },{}],2:[function(require,module,exports){
-console.log("I'ma hero too !");
+"use strict";console.log("I'ma hero too !");
+
 },{}]},{},[1,2]);
