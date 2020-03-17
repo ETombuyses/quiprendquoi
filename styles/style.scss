@@ -1,5 +1,7 @@
 
 @import 'vendors/reset.scss';
+@import 'config/media.scss';
+@import 'blocs/newParty.scss';
 
 * {
   box-sizing: border-box;
@@ -19,16 +21,4 @@ h2 {
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 20px;
-}
-
-button {
-  padding: 5px;
-}
-
-.partyForm__input {
-  margin-bottom: 10px;
-
-  label {
-    margin-right: 5px;
-  }
 }
