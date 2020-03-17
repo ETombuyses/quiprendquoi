@@ -9,6 +9,7 @@ app.use(bodyParser.json());
 // serve the public folder (to make css work)
 // files are accessible from root
 app.use(express.static('public'));
+app.use(express.static('assets'));
 
 
 app.get('/', function(req, res) {

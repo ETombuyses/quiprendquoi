@@ -13,7 +13,7 @@ ul
     li
       form(method="post" action=`/party/${party._id}/items/${item._id}`)
         p= `${item.name} - ${item.user}`
-        button(type="submit") Supprimer
+        button(type="submit" data-notify-item=`${item.name}` data-notify-user=`${item.user}`) Supprimer
 
 form(method="post" action=`/party/${party._id}/items` class="partyForm")
   div(class="partyForm__input")
@@ -22,4 +22,4 @@ form(method="post" action=`/party/${party._id}/items` class="partyForm")
   div(class="partyForm__input")
     label(for="user") Qui apporte l'item
     input(name="user" id="user" required minlength="3" placeholder="nom de la personne")
-  button(type="submit") Ajouter
+  button(type="submit" data-notify) Ajouter
