@@ -17,6 +17,7 @@ form(method="post" action=`/party/${party._id}/items`)
   div
     label(for="name") Nom de l'item
     input(name="name" id="name" required minlength="3" placeholder="item")
+  div
     label(for="user") Qui apporte l'item
     input(name="user" id="user" required minlength="3" placeholder="nom de la personne")
   button(type="submit") Ajouter
