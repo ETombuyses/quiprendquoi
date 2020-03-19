@@ -35,7 +35,7 @@ app.get('/party/:id', function(req, res) {
       party: data,
       title: data.name,
       url: `${process.env.FRONT_URL}:${process.env.PORT}/party/${data._id}`
-    }),
+    })
   )
   .catch((err) => console.log(err));
 });

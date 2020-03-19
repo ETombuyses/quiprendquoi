@@ -11,9 +11,7 @@ if (Notification) {
   document.querySelectorAll('[data-notify-item]').forEach(deleteButton => {
     const item = deleteButton.getAttribute('data-notify-item')
     const user = deleteButton.getAttribute('data-notify-user')
-    console.log('utem', item)
     deleteButton.addEventListener('click', () => {
-      console.log('trigerred notif', Notification.permission)
       if (Notification.permission === 'granted') {
         new Notification('Item supprimé !', {
           body: `${user} n'apportera plus : ${item}`

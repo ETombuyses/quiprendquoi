@@ -7,7 +7,7 @@ if (navigator.clipboard) {
 
     $button.addEventListener('click', copyToClipboard.bind(this, $clipboardEl, $button));
   });
-} else console.warn("Pas de support :(")
+} else console.warn("Pas de support clippboard :(")
 
 
 function copyToClipboard($clipboardEl, $button) {
