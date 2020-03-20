@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 // files are accessible from root
 app.use(express.static('public'));
 app.use(express.static('assets'));
+app.use(express.static('pwa'));
 
 
 app.get('/', function(req, res) {
