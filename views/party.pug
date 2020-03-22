@@ -14,19 +14,20 @@ div.party
       label(for="url") Lien de partage :
       input(id="url" value=`${url}` data-clipboard=`${url}` data-share-url=`${url}` data-share-title=`${party.name}` data-share-text=`${party.author} vous invite a rejoindre l'événement ${party.name}`)
 
-    h3 Qui prend quoi
-    ul.items.party__items.itemList
-      each item in party.items
-        li.itemList__item.item
-          form(method="post" action=`/party/${party._id}/items/${item._id}`)
-            div(data-user=`${item.user}` data-item=`${item.name}` class="item__content") 
-              div.item__who
-                span Qui :
-                span= ` ${item.user}`
-              div.item__what
-                span Quoi :
-                span= ` ${item.name}`
-            button(type="submit" data-notify-item=`${item.name}` data-notify-user=`${item.user}`) Supprimer
+    if party.items.length
+      h3 Qui prend quoi
+      ul.items.party__items.itemList
+        each item in party.items
+          li.itemList__item.item
+            form(method="post" action=`/party/${party._id}/items/${item._id}`)
+              div(data-user=`${item.user}` data-item=`${item.name}` class="item__content") 
+                div.item__who
+                  span Qui :
+                  span= ` ${item.user}`
+                div.item__what
+                  span Quoi :
+                  span= ` ${item.name}`
+              button(type="submit" data-notify-item=`${item.name}` data-notify-user=`${item.user}`) Supprimer
 
     h3 Ajouter un item
     form(method="post" action=`/party/${party._id}/items` class="partyForm").newItem
