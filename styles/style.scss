@@ -1,24 +1,15 @@
 
 @import 'vendors/reset.scss';
 @import 'config/media.scss';
+@import 'config/colors.scss';
+@import 'layout/main.scss';
+@import 'layout/input.scss';
+@import 'layout/titles.scss';
+@import 'layout/label.scss';
+@import 'layout/button.scss';
 @import 'blocs/newParty.scss';
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-h1 {
-  font-weight: bold;
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
+@import 'blocs/party.scss';
+@import 'blocs/itemList.scss';
+@import 'blocs/share.scss';
+@import 'blocs/item.scss';
+@import 'blocs/newItem.scss';

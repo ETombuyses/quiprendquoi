@@ -1,12 +1,12 @@
 {
   "name": "Qui prend quoi ?",
   "short_name": "QPQ",
-  "theme_color": "#ff8639",
-  "background_color": "#00bbcd",
+  "theme_color": "#ffb200",
+  "background_color": "#26547C",
   "display": "standalone",
   "orientation": "portrait",
-  "Scope": "/http://localhost:3000/",
-  "start_url": "/http://localhost:3000/",
+  "Scope": "192.168.1.32:3000/",
+  "start_url": "192.168.1.32:3000/",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

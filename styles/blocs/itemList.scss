@@ -1,0 +1,27 @@
+.itemList {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemList__item {
+  padding: 20px;
+
+  &:not(:first-child) {
+    border-top: 1px solid rgb(206, 206, 206);
+  }
+  
+  &:last-child {
+    border-bottom: 1px solid rgb(206, 206, 206);
+  }
+
+  &:nth-child(odd) {
+    background: $light-orange;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,25 @@
+.item {
+  
+}
+
+.item__content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.item__who {
+  margin-bottom: 10px;
+
+  span:first-child {
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
+
+.item__what {
+  span:first-child {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

@@ -1,17 +1,8 @@
-.newParty {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 0 15px;
+.newItem {
+
 }
 
-.newParty__title {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 15px;
-}
-
-.newParty__fields {
+.newItem__fields {
   margin-bottom: 1em;
 
   @include medium {

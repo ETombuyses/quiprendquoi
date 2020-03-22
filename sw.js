@@ -37,7 +37,8 @@ addEventListener('fetch', (event) => {
       fetch(event.request)
         .then((res) => {
           const copy = res.clone();
-          caches.open('static').then((cache) => cache.put(event.request, copy));
+          caches.open('static').
+          then((cache) => cache.put(event.request, copy));
           return res;
         })
         .catch(() => caches.match(event.request)),
@@ -49,4 +50,3 @@ addEventListener('fetch', (event) => {
 function isPartyPage(url) {
   return /party\/[a-zA-Z0-9]*$/.test(url);
 }
-

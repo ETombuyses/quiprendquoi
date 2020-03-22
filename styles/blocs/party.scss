@@ -1,0 +1,35 @@
+.party {
+  background: white;
+  border-radius: 0px 0px 8px 8px;
+  padding: 0 0 20px 0;
+  margin: 20px;
+}
+
+.party__name {
+  background: $orange;
+  color: $black;
+  padding: 20px;
+  margin: 0 0 15px 0;
+}
+
+
+.party__body {
+  margin: 0 20px;
+}
+
+.party__creator {
+  color: grey;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+
+.party__share {
+  margin-bottom: 40px;
+  color: white;
+  display: inline-block;
+}
+
+.party__items {
+  margin-bottom: 40px;
+}

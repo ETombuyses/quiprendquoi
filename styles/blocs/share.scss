@@ -1,0 +1,21 @@
+.share {
+  background: $black;
+  padding: 20px;
+
+  label {
+    margin-bottom: 15px;
+  }
+
+  input {
+    margin-bottom: 15px;
+  }
+
+  button {
+    background: $orange;
+    display: block;
+
+    &:nth-of-type(2) {
+      margin-top: 15px;
+    }
+  }
+}
