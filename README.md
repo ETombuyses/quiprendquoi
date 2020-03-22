@@ -26,9 +26,11 @@ Les web notifications sont des notifications que l'utilisateur reçoit sur son s
 Elles permettent de notifier l'utilisateur de certains "évènements" qui ont lui sur le site qu'ils utilisent. Par exemple, lorsque l'on reçoit une notification sur notre ordinateur ou téléphone nous prevenant que nous avons reçu un message sur un réseau social.
 
 Pour vérifier que le browser comprend bien les notifications, il doit pouvoir y avoir accès
-`if (Notification) {
+`
+if (Notification) {
   // I can handle notifications !!!
-}`
+}
+`
 
 Afin de les utiliser, il faut encore demander la permission à l'utilisateur grâce à 
 `Notification.requestPermission().then(() => {
