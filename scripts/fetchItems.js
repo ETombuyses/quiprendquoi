@@ -29,7 +29,6 @@ if (itemsList) {
             freshItems.forEach(freshItem => {
               if (itemsIds.indexOf(freshItem._id) === -1) {
                 if (Notification) {
-                  Notification.requestPermission();
                   if (Notification.permission === 'granted') {
                     new Notification(`Item ajouté à ${partyName}!`, {
                       body: `${freshItem.user} a décidé d'apporter : ${freshItem.name}`
@@ -44,7 +43,6 @@ if (itemsList) {
             items.forEach(item => {
               if (freshItemsIds.indexOf(item._id) === -1) {
                 if (Notification) {
-                  Notification.requestPermission();
                   if (Notification.permission === 'granted') {
                     new Notification(`Item supprimé de ${partyName}!`, {
                       body: `${item.user} n'apportera plus : ${item.name}`

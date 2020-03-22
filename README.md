@@ -8,35 +8,60 @@
 
 ## Améliorations apportées
 
-_Pour chaque amélioration, un message type "message de commit" et si pertinent le nom des fichiers principalement concernés_
+- Ajout d'un item (`app.js`, `party.pug`)
+- Affichage des items (`app.js`, `party.pug`)
+- Suppression d'un item (`app.js`, `party.pug`)
+- Notification en cas de suppression d'un item par nous même (`notification.js`)
+- Notification si suppression ou ajout d'un item grâce à un fetch toutes les 5 secondes --> rafraichissement automatique (`fetchItems.js`)
+- CSS convenable (`style.scss`)
+- Mise en ligne sur Heroku (`https://qui-prend-quoi.herokuapp.com/`)
 
-_Quelques exemples (voir le TP)_
-
-- Affichage de la liste des items sur la page événément (`app.js`, `party.pug`)
-- Possibilité de supprimer un item (`app.js`, `party.pug`)
-- Rafraîchissement automatique des items avec _fetch_ (`party.js`)
-- Utilisation du localStorage pour stocker le nom de l'utilisateur (`user.js`)
-- Meilleure présentation visuelle des items (`party.scss`)
+PS : J'ai rencontré un problème avec la redirection d'URL effectuée par l'application au moment d'ajouter un item. Je n'ai malheureusement pas encore trouvé la solution pour éviter de rediriger la page APRES avoir obtenu une acceptation ou un refus des notifications. Il faudra peut être donc autoriser manuellement les notifications pour qu'elles fonctionnement
 
 ## Article personnel
 
-### Sujet : à completer
+### Sujet : API Web Notifications
 
-Le sujet peut être :
+Les web notifications sont des notifications que l'utilisateur reçoit sur son système d'exploitation.
+Elles permettent de notifier l'utilisateur de certains "évènements" qui ont lui sur le site qu'ils utilisent. Par exemple, lorsque l'on reçoit une notification sur notre ordinateur ou téléphone nous prevenant que nous avons reçu un message sur un réseau social.
 
-- une web api explorée (même en partie)
-- un outil ou technique lié à la performance, l'amélioration progressive, l'accessibilité
-- une technique liée aux PWA ou aux service workers
-- un outil de développement (package npm, devtool...)
+Pour vérifier que le browser comprend bien les notifications, il doit pouvoir y avoir accès
+`if (Notification) {
+  // I can handle notifications !!!
+}`
 
-Ce n'est pas une liste exhaustive, demandez en cas de doute.
+Afin de les utiliser, il faut encore demander la permission à l'utilisateur grâce à 
+`Notification.requestPermission().then(() => {
+  // wait for the user to make a choice, then do something
+})`
 
-Plan en cas de panne d'inspiration :
+Cela va déclancher une fenêtre de dialogue du browser (la forme dépend de celui-ci) en demandant si l'on souhait ou non recevoir des notifications de la part du site en question. L'utilisateur peut alors accepter ou décliner.
 
-- Description du sujet choisi (sa définition, son but...)
-- Exemple d'utitlisation ou d'implémentation (bout de code si pertinent, capture d'écran...)
-- Conclusion : avantages, inconvénients et cas d'usage
+La permission de l'Interface Notification avoit comme valeur :
+
+- default: l'utilisateur n'a pas fait son choix, par défaut, cela revient à dire qu'il n'a pas accepté
+- granted : l'utilisateur a accepté de recevoir des notifications
+- denied : l'utilisateur a refusé de recevoir des notifications
+
+Idéalement, il ne faut demander qu'une seule fois la permission à l'utilisateur pour éviter de le spammer.
 
 
+Si l'on a obtenu la permission, on peut encoyer des notifications dont voici un exemple :
+`new Notification('I am the notification's title !', {
+  body: `I am the notification's body`
+});`
 
-afficher soit : bouton copier / input pour copier
+Le paramètre utilisé pour créer une notification est un objet d'options. Les principales options sont les suivantes : 
+`{
+  "body": "<String>",
+  "icon": "<URL String>",
+  "image": "<URL String>",
+  "badge": "<URL String>",
+  "vibrate": "<Array of Integers>",
+  "sound": "<URL String>",
+  "dir": "<String of 'auto' | 'ltr' | 'rtl'>",
+}`
+
+On peut ainsi personnaliser nos notifications avec un titre, une icône, une image et bien d'autre encore.
+
+
